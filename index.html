@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CultureLingo</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">🌍</div>
+      <div>
+        <h1>CultureLingo</h1>
+        <p>Learn cultures through fun micro-lessons.</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="streak">🔥 Streak: <span id="streakValue">5</span> days</div>
+      <button id="resetButton" class="btn secondary">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h2>Trade language learning for cultural discovery.</h2>
+        <p>Pick a culture, unlock stories, trivia, and a quick quiz that feels like a Duolingo lesson.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card__stat">
+          <strong id="xpValue">320</strong>
+          <span>XP earned</span>
+        </div>
+        <div class="hero-card__stat">
+          <strong id="culturesCompleted">3</strong>
+          <span>cultures explored</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="culture-grid-section">
+      <div class="section-title">
+        <h3>Choose a culture</h3>
+        <p>Each path includes cultural insights, rituals, festivals, and a quiz.</p>
+      </div>
+      <div id="cultureGrid" class="culture-grid"></div>
+    </section>
+
+    <section id="lessonSection" class="lesson-section hidden">
+      <div class="section-title">
+        <div>
+          <h3 id="lessonTitle">Culture lesson</h3>
+          <p id="lessonSubtitle">Discover traditions and customs from around the world.</p>
+        </div>
+        <button id="backButton" class="btn secondary">Back to cultures</button>
+      </div>
+
+      <div id="lessonCards" class="lesson-cards"></div>
+
+      <div class="action-row">
+        <button id="startQuizButton" class="btn primary">Start quiz</button>
+      </div>
+    </section>
+
+    <section id="quizSection" class="quiz-section hidden">
+      <div class="section-title">
+        <div>
+          <h3>Quick culture quiz</h3>
+          <p>Answer 3 questions to earn XP for this culture.</p>
+        </div>
+        <button id="closeQuizButton" class="btn secondary">Close quiz</button>
+      </div>
+      <div id="quizContainer" class="quiz-container"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>CultureLingo clone · Explore traditions, festivals, food and stories.</p>
+  </footer>
+
+  <script src="JS/app.js"></script>
+</body>
+</html>
