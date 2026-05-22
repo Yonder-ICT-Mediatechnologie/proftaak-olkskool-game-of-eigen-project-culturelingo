@@ -25,6 +25,16 @@ const cultures = [
         question: 'Origami is the art of:',
         choices: ['Cooking', 'Paper folding', 'Painting', 'Music'],
         answer: 1
+      },
+      {
+        question: 'What is a kimono?',
+        choices: ['A type of food', 'A traditional garment', 'A festival', 'A musical instrument'],
+        answer: 1
+      },
+      {
+        question: 'Which season is celebrated with cherry blossoms?',
+        choices: ['Spring', 'Summer', 'Autumn', 'Winter'],
+        answer: 0
       }
     ]
   },
@@ -54,6 +64,16 @@ const cultures = [
         question: 'Mariachi music often features which instrument?',
         choices: ['Bagpipes', 'Guitar', 'Violin', 'Flute'],
         answer: 2
+      },
+      {
+        question: 'What is “elote”?',
+        choices: ['A type of taco', 'Grilled corn on the cob', 'A spicy sauce', 'A traditional dance'],
+        answer: 1
+      },
+      {
+        question: 'Which of these is a popular Mexican street food?',
+        choices: ['Sushi', 'Churros', 'Pizza', 'Baguette'],
+        answer: 1
       }
     ]
   },
@@ -83,6 +103,16 @@ const cultures = [
         question: 'Which animal was sacred in ancient Egypt?',
         choices: ['Cat', 'Horse', 'Eagle', 'Wolf'],
         answer: 0
+      },
+      {
+        question: 'What is a scarab?',
+        choices: ['A type of jewelry', 'A beetle symbolizing rebirth', 'A festival', 'A musical instrument'], 
+        answer: 1
+      },
+      {
+        question: 'Which of these is an ancient Egyptian god?',
+        choices: ['Zeus', 'Ra', 'Odin', 'Shiva'],
+        answer: 1
       }
     ]
   },
@@ -112,6 +142,15 @@ const cultures = [
         question: 'Which dish is Moroccan? ',
         choices: ['Sushi', 'Tagine', 'Goulash', 'Paella'],
         answer: 1
+      },
+      {
+        question: 'What is a common feature of Moroccan crafts?',
+        choices: ['Minimalism', 'Bright colors and intricate patterns', 'Monochrome designs', 'Abstract shapes'],
+        answer: 1
+      },
+      { question: 'Which of these is a traditional Moroccan pastry?',
+        choices: ['Baklava', 'Croissant', 'Macaron', 'Doughnut'],
+        answer: 0
       }
     ]
   },
@@ -140,6 +179,16 @@ const cultures = [
       {
         question: 'Which craft is Turkey famous for?',
         choices: ['Origami', 'Iznik tiles', 'Pottery', 'Kilim weaving'],
+        answer: 1
+      },
+      {
+        question: 'What is a common theme in Turkish art?',
+        choices: ['Nature and geometry', 'Abstract expressionism', 'Minimalism', 'Pop culture'],  
+        answer: 0
+      },
+      {
+        question: 'Which of these is a traditional Turkish dish?',
+        choices: ['Sushi', 'Kebab', 'Pizza', 'Taco'],
         answer: 1
       }
     ]
@@ -170,6 +219,16 @@ const cultures = [
         question: 'What does the dragon often symbolize?',
         choices: ['Luck and power', 'Sadness', 'Silence', 'Speed'],
         answer: 0
+      },
+      {
+        question: 'Which of these is a traditional Chinese art form?',
+        choices: ['Calligraphy', 'Origami', 'Mosaic', 'Graffiti'],    
+        answer: 0
+      },
+      {
+        question: 'What is a common theme in Chinese festivals?',
+        choices: ['Family and renewal', 'Individual achievement', 'Sports and competition', 'Technology and innovation'],
+        answer: 0
       }
     ]
   },
@@ -199,6 +258,15 @@ const cultures = [
         question: 'Which Indian dance style is classical?',
         choices: ['Tango', 'Kathak', 'Salsa', 'Hip hop'],
         answer: 1
+      },
+      {
+        question: 'What is a common theme in Indian festivals?',
+        choices: ['Family and spirituality', 'Individual achievement', 'Sports and competition', 'Technology and innovation'],  
+        answer: 0
+      },
+      { question: 'Which of these is a popular Indian street food?',
+        choices: ['Samosa', 'Pizza', 'Taco', 'Baguette'],
+        answer: 0
       }
     ]
   },
@@ -228,6 +296,16 @@ const cultures = [
         question: 'Which historical group is associated with Norway?',
         choices: ['Samurai', 'Vikings', 'Incas', 'Mongols'],
         answer: 1
+      },
+      {
+        question: 'What is a common theme in Norwegian culture?',
+        choices: ['Family and nature', 'Individual achievement', 'Sports and competition', 'Technology and innovation'],  
+        answer: 0 
+      },
+      {
+        question: 'Which of these is a traditional Norwegian dish?',
+        choices: ['Sushi', 'Lutefisk', 'Pizza', 'Taco'],
+        answer: 1
       }
     ]
   }
@@ -238,9 +316,9 @@ const state = {
   currentQuiz: null,
   currentQuestion: 0,
   score: 0,
-  xp: 320,
-  culturesCompleted: 3,
-  streak: 5
+  xp: 0,
+  culturesCompleted: 0,
+  streak: 1
 };
 
 const cultureGrid = document.getElementById('cultureGrid');
