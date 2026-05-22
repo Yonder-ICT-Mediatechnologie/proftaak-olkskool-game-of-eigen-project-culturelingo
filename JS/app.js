@@ -1,4 +1,4 @@
-const cultures = [
+let cultures = [
   {
     id: 'japanese',
     name: 'Japanese Culture',
@@ -442,6 +442,21 @@ function checkAnswer(selectedIndex, optionElement) {
   }, 700);
 }
 
+async function loadCultureData() {
+  try {
+    const response = await fetch('PHP/api/get_cultures.php');
+    if (!response.ok) {
+      throw new Error(`API request failed with status ${response.status}`);
+    }
+    const data = await response.json();
+    if (Array.isArray(data) && data.length > 0) {
+      cultures = data;
+    }
+  } catch (error) {
+    console.error('Could not load culture data from the database:', error);
+  }
+}
+
 function completeQuiz() {
   const earnedXp = state.score * 25;
   state.xp += earnedXp;
@@ -479,4 +494,6 @@ closeQuizButton.addEventListener('click', () => {
   quizSection.classList.add('hidden');
 });
 
-renderCultureCards();
+loadCultureData()
+  .then(renderCultureCards)
+  .catch(() => renderCultureCards());
