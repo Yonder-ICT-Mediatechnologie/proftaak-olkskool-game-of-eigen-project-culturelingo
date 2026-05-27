@@ -2,7 +2,7 @@
 
 function get_db_connection(): mysqli
 {
-    $host = '127.0.0.1';
+    $host = 'localhost';
     $user = 'root';
     $password = 'root';
     $database = 'culturelingo';

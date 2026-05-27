@@ -444,7 +444,14 @@ function checkAnswer(selectedIndex, optionElement) {
 
 async function loadCultureData() {
   try {
-    const response = await fetch('PHP/api/get_cultures.php');
+    // Try Laravel API first (if running via php artisan serve on port 8001)
+    let response = await fetch('http://localhost:8001/api/cultures').catch(() => null);
+    
+    // Fall back to Apache/MAMP route if Laravel dev server isn't running
+    if (!response || !response.ok) {
+      response = await fetch('/CultureLingo-laravel/public/api/cultures');
+    }
+    
     if (!response.ok) {
       throw new Error(`API request failed with status ${response.status}`);
     }
