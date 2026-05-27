@@ -21,7 +21,7 @@
         <h1>Laravel CRUD for CultureLingo</h1>
         <p>Manage the culture records used by the main app.</p>
         <a class="btn primary" href="{{ route('cultures.create') }}">Add culture</a>
-        <a class="btn" href="/index.html">Back to main app</a>
+        <a class="btn" href="http://127.0.0.1/CultureLingo/">Back to main app</a>
     </div>
 
     @if (session('success'))
