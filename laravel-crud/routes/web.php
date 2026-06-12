@@ -1,17 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CultureController;
+use App\Http\Controllers\UserController;
 
-// Redirect de homepagina naar het dashboard
 Route::get('/', function () {
     return redirect('/dashboard');
 });
 
-// Je dashboard route
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Laad de Breeze routes
+Route::resource('cultures', CultureController::class)->middleware(['auth']);
+Route::resource('users', UserController::class)->middleware(['auth']);
+
 require __DIR__.'/auth.php';
-require __DIR__.'/profile.php'; // <--- DIT IS DE REGEL DIE JE NODIG HAD
+require __DIR__.'/profile.php';

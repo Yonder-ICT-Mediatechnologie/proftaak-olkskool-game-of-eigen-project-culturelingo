@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>CultureLingo</title>
     <link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    @include('layouts.navigation')
     {{ $slot }}
+    <script src="{{ asset('JS/app.js') }}"></script>
 </body>
 </html>

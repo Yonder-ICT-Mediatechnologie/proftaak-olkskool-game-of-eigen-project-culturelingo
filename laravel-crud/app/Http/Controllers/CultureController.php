@@ -65,4 +65,9 @@ class CultureController extends Controller
 
         return redirect()->route('cultures.index')->with('success', 'Culture deleted successfully.');
     }
+    public function apiIndex()
+{
+    // Haalt alle culturen op uit je database
+    return \App\Models\Culture::all();
+}
 }
