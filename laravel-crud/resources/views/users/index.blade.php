@@ -21,7 +21,7 @@
         <h1>User Account Management</h1>
         <p>Review and manage active registered player accounts.</p>
         <a class="btn primary" href="{{ route('users.create') }}">Create New Account</a>
-        <a class="btn" href="{{ route('cultures.index') }}">Go to Culture Management</a>
+        
     </div>
 
     @if (session('success'))

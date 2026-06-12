@@ -1,15 +1,17 @@
 <?php
 
-use App\Http\Controllers\CultureController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+// Redirect de homepagina naar het dashboard
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/dashboard');
 });
 
-// CRUD routes voor de culturen (Game Data)
-Route::resource('cultures', CultureController::class);
+// Je dashboard route
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// CRUD routes voor de accounts (User Management)
-Route::resource('users', UserController::class);
+// Laad de Breeze routes
+require __DIR__.'/auth.php';
+require __DIR__.'/profile.php'; // <--- DIT IS DE REGEL DIE JE NODIG HAD
