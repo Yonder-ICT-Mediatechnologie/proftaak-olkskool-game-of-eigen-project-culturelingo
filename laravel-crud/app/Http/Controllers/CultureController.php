@@ -38,6 +38,17 @@ class CultureController extends Controller
     {
         return view('cultures.edit', compact('culture'));
     }
+    public function updateProgress(Request $request)
+{
+    $user = auth()->user();
+    
+    // Voeg de XP en streak toe
+    $user->xp += $request->xp_earned;
+    $user->streak += 1; 
+    $user->save();
+
+    return response()->json(['success' => true, 'new_streak' => $user->streak]);
+}
 
     public function update(Request $request, Culture $culture)
     {
@@ -70,4 +81,5 @@ class CultureController extends Controller
     // Haalt alle culturen op uit je database
     return \App\Models\Culture::all();
 }
+
 }
